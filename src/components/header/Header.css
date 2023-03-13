@@ -1,0 +1,49 @@
+.header {
+    width: 100vw;
+    height: 10vh;
+    background-color: aquamarine;
+  
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 10px;
+    position: sticky;
+  }
+  .header .logo {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+  }
+  .header .menu ul {
+    list-style-type: none;
+  }
+  .header ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+  }
+  .header ul li {
+    display: inline-block;
+    padding: 0 0.6rem;
+  }
+  .header ul li a:hover {
+    color: whitesmoke;
+  }
+  .header .headerIcons {
+    display: flex;
+  }
+  .header .headerIcons input {
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    height: 1.6rem;
+    width: 10rem;
+    padding: 0 5px;
+  }
+  .header .headerIcons img {
+    padding: 0 0.6rem;
+    width: 1.3rem;
+  }
+  
