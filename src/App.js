@@ -4,9 +4,12 @@ import Home from "./pages/home/Home";
 import Wishlist from "./pages/wishlist/Wishlist";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useStateValue } from "./redux/StateProvider";
 
 function App() {
   const [apiResp, setApiResp] = useState();
+
+  const [, dispatch] = useStateValue();
 
   useEffect(() => {
     fetch("http://localhost:3001/product")
@@ -17,6 +20,10 @@ function App() {
         setApiResp(data);
       });
   }, []);
+
+  useEffect(() => {
+    dispatch({ type: "APIDATA", value: apiResp });
+  }, [apiResp]);
 
   console.log("apiiiiiii", apiResp);
   

@@ -1,0 +1,34 @@
+{
+  "product": [
+    {
+      "categoryId": 1001,
+      "img": "VanHeusenGreenshirt.jpg",
+      "category": "men",
+      "price": 2000,
+      "size": "medium",
+      "itemID": 500001,
+      "itemCount": 4,
+      "color": ["red", "green", "blue", "black"],
+      "brand": "Van Huesen",
+      "description": "it is Van Huesen Cotton Shirt. Best suited for office wear. Cotton Fabrics",
+      "offer": "Bank Offer10% off on ICICI Bank Credit Card EMI Transactions, up to ₹1250, on orders of ₹5,000 and aboveT&C",
+      "seller": "Van Heusen",
+      "stock": true
+    },
+    {
+      "categoryId": 1001,
+      "img": "LPBlueSuit.jpg",
+      "category": "men",
+      "price": 2000,
+      "size": "medium",
+      "itemID": 500002,
+      "itemCount": 4,
+      "color": ["red", "green", "blue", "black"],
+      "brand": "Louis Philippe",
+      "description": "it is Louis Philippe Cotton Suit. Best suited for office wear. Cotton Fabrics",
+      "offer": "Bank Offer10% off on ICICI Bank Credit Card EMI Transactions, up to ₹1250, on orders of ₹5,000 and aboveT&C",
+      "seller": "Louis Philippe",
+      "stock": true
+    }
+  ]
+}
