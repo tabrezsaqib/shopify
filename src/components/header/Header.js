@@ -14,19 +14,19 @@ function Header() {
       <div className="menu">
         <ul>
           <li>
-            <a href="#"> Men </a>
+            <NavLink to="/men">Men</NavLink>
           </li>
           <li>
-            <a href="#"> Women </a>
+            <NavLink to="/women">Women</NavLink>
           </li>
           <li>
-            <a href="#"> Kids</a>
+            <NavLink to="/kids">Kids</NavLink>
           </li>
           <li>
-            <a href="#"> Home & Living </a>
+            <NavLink to="/home&living">Home & Living</NavLink>
           </li>
           <li>
-            <a href="#"> Beauty</a>
+            <NavLink to="/beauty">Beauty</NavLink>
           </li>
         </ul>
       </div>
