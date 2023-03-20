@@ -1,10 +1,33 @@
 import React from 'react';
 import './Card.css';
-import VanHeusenGreenshirt from "../../assets/images/men/VanHeusenGreenshirt.jpg";
 import cart from "../../assets/icons/cart.svg";
 import wishlist from "../../assets/icons/wishlist.svg";
+import { useStateValue } from "../../redux/StateProvider";
 
 function Card(props) {
+
+  const [{ WishlistArray, cartArray }, dispatch] = useStateValue();
+
+  function checkWishList(id) {
+    if (WishlistArray.includes(id)) {
+    } else {
+      dispatch({
+        type: "WISHLIST",
+        value: id,
+      });
+    }
+  }
+
+  function checkCartList(id) {
+    if (cartArray.includes(id)) {
+    } else {
+      dispatch({
+        type: "CARTLIST",
+        value: id,
+      });
+    }
+  }
+
   return (
     <div>
         <div className="card">
@@ -47,10 +70,14 @@ function Card(props) {
         <p>{props.data && props?.data?.brand}</p>
       </div>
       <div className="cardBtnDiv">
-        <button className="cardBtn">
+        <button className="cardBtn"
+        onClick={() => checkWishList(props.data && props?.data?.itemID)}
+        >
           <img src={wishlist} />
         </button>
-        <button className="cardBtn">
+        <button className="cardBtn"
+        onClick={() => checkCartList(props.data && props?.data?.itemID)}
+        >
           <img src={cart} />
         </button>
       </div>
