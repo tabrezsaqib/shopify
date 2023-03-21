@@ -8,13 +8,13 @@ function WishlistCart() {
     const [temp, setTemp] = useState([]);
 
     useEffect(() => {
-        apiData &&
-          apiData.map((element) => {
-            if (WishlistArray.includes(element?.itemID)) {
-              setTemp((temp) => [...temp, element]);
-            }
-          });
-      }, [apiData, WishlistArray]);
+    apiData &&
+      apiData.map((element) => {
+        if (WishlistArray.includes(element?.itemID)) {
+          setTemp((temp) => [...temp, element]);
+        }
+      });
+  }, [apiData, WishlistArray]);
 
   return (
     <div className="WishlistCart">
