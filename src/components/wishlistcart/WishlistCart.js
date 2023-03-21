@@ -9,12 +9,13 @@ function WishlistCart() {
 
     useEffect(() => {
     apiData &&
-      apiData.map((element) => {
+      apiData.forEach((element) => {
         if (WishlistArray.includes(element?.itemID)) {
           setTemp((temp) => [...temp, element]);
         }
       });
-  }, [apiData, WishlistArray]);
+     
+  }, [WishlistArray]);
 
   return (
     <div className="WishlistCart">

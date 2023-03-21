@@ -1,6 +1,6 @@
 export const initialState = {
     apiData: [],
-    WishlistArray: [11000001],
+    WishlistArray: [],
     cartArray: [],
     name: "Tabs",
     age: 26
