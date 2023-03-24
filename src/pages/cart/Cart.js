@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
-import WishlistBody from "../../components/wishlistbody/WishlistBody";
+import CartBody from "../../components/cartbody/CartBody";
 import './Cart.css';
 
 
@@ -9,7 +9,7 @@ function Cart() {
   return (
     <div>
       <Header />
-      <WishlistBody/>
+      <CartBody/>
       <Footer />
     </div>
   );

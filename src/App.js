@@ -11,6 +11,7 @@ import Women from "./pages/women/Women";
 import Kids from "./pages/kids/Kids";
 import HomeLiving from "./pages/home&living/Homeliving";
 import Beauty from "./pages/beauty/Beauty";
+import Checkout from "./pages/checkout/Checkout";
 
 
 function App() {
@@ -41,12 +42,12 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/cart" element={<Cart />} />
-
           <Route path="/men" element={<Men />} />
           <Route path="/women" element={<Women />} />
           <Route path="/kids" element={<Kids />} />
           <Route path="/beauty" element={<Beauty />} />
           <Route path="/home&living" element={<HomeLiving />} />
+          <Route path="/checkout/:id" element={<Checkout />} />
         </Routes>
       </BrowserRouter>
     </div>

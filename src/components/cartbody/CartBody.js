@@ -1,67 +1,64 @@
 import React, { useEffect, useState } from "react";
-import "./WishlistBody.css";
+import "./CartBody.css";
 import { useStateValue } from "../../redux/StateProvider";
+import { NavLink } from "react-router-dom";
 
-function WishlistBody() {
-    const [{ WishlistArray, apiData, cartArray }, dispatch] = useStateValue();
+function CartBody() {
+  const [{ WishlistArray, apiData, cartArray }, dispatch] = useStateValue();
 
-    const [temp, setTemp] = useState([]);
+  const [temp, setTemp] = useState([]);
 
-    function refresh() {
-      let temp = [];
-  
-      apiData &&
-        apiData.map((element) => {
-          WishlistArray &&
-            WishlistArray.map((elem) => {
-              if (element?.itemID === elem) {
-                temp.push(element);
-              }
-            });
-        });
-      setTemp(temp);
-    }
+  function refresh() {
+    let temp = [];
 
-    useEffect(() => {
-      refresh();
-    }, []);
+    apiData &&
+      apiData.map((element) => {
+        cartArray &&
+          cartArray.map((elem) => {
+            if (element?.itemID === elem) {
+              temp.push(element);
+            }
+          });
+      });
+    setTemp(temp);
+  }
 
-    useEffect(() => {
-      refresh();
-    }, [WishlistArray]);
+  useEffect(() => {
+    refresh();
+  }, []);
 
-    function removeItem(id) {
-      let result =
-        WishlistArray &&
-        WishlistArray.filter((element, index, array) => {
-          return element !== id;
-        });
-  
+  useEffect(() => {
+    refresh();
+  }, [cartArray]);
+
+  function removeItem(id) {
+    let result =
+      cartArray &&
+      cartArray.filter((element) => {
+        return element !== id;
+      });
+
+    dispatch({
+      type: "CARTLIST",
+      value: result,
+    });
+
+    refresh();
+  }
+
+  function addToCart(id) {
+    if (WishlistArray.includes(id)) {
+      //do nothing
+    } else {
+      let temp = WishlistArray;
+      temp.push(id);
+
       dispatch({
         type: "WISHLIST",
-        value: result,
+        value: temp,
       });
-  
-      // console.log(result);
-      // console.log(WishlistArray);
-  
-      refresh();
     }
-
-    function addtoCart(id){
-      if(cartArray.includes(id)){
-        //do nothing
-      }
-      else{
-        let temp = cartArray;
-        temp.push(id);
-
-        dispatch({
-          type: "CARTLIST",
-          value: temp,
-        });
-      }
-    }
+  }
 
   return (
     <div className="WishlistCart">
@@ -95,39 +92,43 @@ function WishlistBody() {
               <div className="itemContent">
                 <p>{element?.brand}</p>
 
-                <p>$ {element?.price}</p>
+                <p>Rs. {element?.price}</p>
+
                 {element?.stock === true ? (
                   <p className="InStock">In Stock</p>
                 ) : (
                   <p className="outOfStock">Out of Stock</p>
                 )}
+
                 <div>
                   <button
                     onClick={() => removeItem(element?.itemID)}
-                    // onClick={() => alert(element?.itemID)}
                     className="wishlistPageRemoveBtn"
                   >
                     Remove
                   </button>
                   <button
-                    onClick={() => addtoCart(element?.itemID)}
+                    onClick={() => addToCart(element?.itemID)}
                     className="wishlistPageCartBtn"
                   >
-                    Cart
+                    Wishlist
                   </button>
-                  <button
-                    onClick={() => alert(element?.itemID)}
-                    className="wishlistPageBuyBtn"
-                  >
-                    Buy Now
-                  </button>
+
+                  <NavLink to="/checkout/" state={{ data: 10001 }}>
+                    <button
+                      onClick={() => alert(element?.itemID)}
+                      className="wishlistPageBuyBtn"
+                    >
+                      Buy Now
+                    </button>
+                  </NavLink>
                 </div>
               </div>
             </div>
           );
         })}
     </div>
-  )
+  );
 }
 
-export default WishlistBody
+export default CartBody;

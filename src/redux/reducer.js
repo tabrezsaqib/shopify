@@ -22,13 +22,13 @@ export const reducer = (state, action) => {
       case "WISHLIST":
           return {
             ...state,
-            WishlistArray: [...state.WishlistArray, action.value],
+            WishlistArray: action.value,
           };
     
       case "CARTLIST":
           return {
             ...state,
-            cartArray: [...state.cartArray, action.value],
+            cartArray: action.value,
           };
     }
 

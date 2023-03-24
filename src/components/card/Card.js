@@ -10,20 +10,27 @@ function Card(props) {
 
   function checkWishList(id) {
     if (WishlistArray.includes(id)) {
+      // if the id is already present in the array, then dont push the same id again
     } else {
+      let temp = WishlistArray;
+      temp.push(id);
+
       dispatch({
         type: "WISHLIST",
-        value: id,
+        value: temp,
       });
     }
   }
 
   function checkCartList(id) {
     if (cartArray.includes(id)) {
+      // if the id is already present in the array, then dont push the same id again
     } else {
+      let temp = cartArray;
+      temp.push(id);
       dispatch({
         type: "CARTLIST",
-        value: id,
+        value: temp,
       });
     }
   }
