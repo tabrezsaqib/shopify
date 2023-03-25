@@ -114,7 +114,7 @@ function CartBody() {
                     Wishlist
                   </button>
 
-                  <NavLink to="/checkout/" state={{ data: 10001 }}>
+                  <NavLink to="/checkout" state={{ id: element?.itemID }}>
                     <button
                       onClick={() => alert(element?.itemID)}
                       className="wishlistPageBuyBtn"

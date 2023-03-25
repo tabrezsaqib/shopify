@@ -1,0 +1,61 @@
+.CheckoutBody {
+    width: 100vw;
+    height: 80vh;
+    background-color: aqua;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    overflow: auto;
+  
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+  }
+  .checkoutImg {
+    width: 50vw;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .checkoutImg .checkoutImgContainer {
+    width: 40vw;
+    height: 80%;
+    background-color: rebeccapurple;
+  }
+  .checkoutImg .checkoutImgContainer img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .checkoutContent {
+    width: 50vw;
+    height: 100%;
+    background-color: yellow;
+    box-sizing: border-box;
+    padding: 1rem 1.2rem;
+    overflow: auto;
+  }
+  .checkoutContentBrandName {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .checkoutContentPrice {
+    font-size: 1.2rem;
+  }
+  .checkoutContentDescription,
+  .checkoutContentSeller {
+    font-style: italic;
+  }
+  .checkoutContentDescriptionSpan,
+  .checkoutContentOfferSpan,
+  .checkoutContentSellerHeader {
+    font-style: normal;
+    font-weight: 600;
+    color: black;
+  }
+  .checkoutContentOffer {
+    font-style: italic;
+    color: green;
+  }
