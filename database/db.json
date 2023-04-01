@@ -5,7 +5,7 @@
       "img": "airJordans.jpg",
       "category": "men",
       "price": 400,
-      "size": ["small", "medium", "large", "XL", "XXL"],
+      "size": ["UK6", "UK7", "UK8", "UK9", "UK10", "UK11"],
       "itemID": 500001,
       "itemCount": 4,
       "color": ["red", "green", "blue", "black"],

@@ -1,7 +1,28 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./DescriptionBody.css";
+import { useStateValue } from "../../redux/StateProvider";
+import { NavLink, useNavigate } from "react-router-dom";
 
 function DescriptionBody(props) {
+  const [{ cartArray }, dispatch] = useStateValue();
+
+  const Navigate = useNavigate();
+  function handleCart(id) {
+    if (cartArray.includes(id)) {
+      //do nothing
+    } else {
+      let temp = cartArray;
+      temp.push(id);
+
+      dispatch({
+        type: "CARTLIST",
+        value: temp,
+      });
+    }
+
+    Navigate("/cart");
+  }
+
   return (
     <div className="DescriptionBody">
       {props.data &&
@@ -71,6 +92,11 @@ function DescriptionBody(props) {
                   </summary>
                   <p className="DescriptionContentSeller">{element?.seller}</p>
                 </details>
+                <div className="DescriptionBtn">
+                  <button onClick={() => handleCart(element?.itemID)}>
+                    Buy Now
+                  </button>
+                </div>
               </div>
             </>
           );

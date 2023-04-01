@@ -6,10 +6,6 @@
     flex-wrap: wrap;
     flex-direction: row;
     overflow: auto;
-  
-    /* display: flex;
-      align-items: center;
-      justify-content: center; */
   }
   .DescriptionImg {
     width: 50vw;
@@ -58,4 +54,12 @@
   .DescriptionContentOffer {
     font-style: italic;
     color: green;
+  }
+  .DescriptionContent .DescriptionBtn {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .DescriptionContent .DescriptionBtn button {
+    width: 10vw;
   }

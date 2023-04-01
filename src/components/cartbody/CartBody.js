@@ -8,19 +8,26 @@ function CartBody() {
 
   const [temp, setTemp] = useState([]);
 
+  const [totalPrice, setTotalPrice] = useState(0);
+
   function refresh() {
     let temp = [];
+    let total = 0;
 
     apiData &&
       apiData.map((element) => {
         cartArray &&
           cartArray.map((elem) => {
             if (element?.itemID === elem) {
-              temp.push(element);
+              if (element?.stock) {
+                temp.push(element);
+                total = total + element?.price;
+              }
             }
           });
       });
     setTemp(temp);
+    setTotalPrice(total);
   }
 
   useEffect(() => {
@@ -60,73 +67,72 @@ function CartBody() {
     }
   }
 
+  // console.log("ooooooooo", cartArray);
+
   return (
-    <div className="WishlistCart">
-      {temp &&
-        temp.map((element) => {
-          return (
-            <div className="itemContainer">
-              <div className="itemImg">
-                {element && element?.categoryId === 1001 ? (
-                  <img
-                    src={require(`../../assets/images/men/${element?.img}`)}
-                  />
-                ) : element && element?.categoryId === 1002 ? (
-                  <img
-                    src={require(`../../assets/images/women/${element?.img}`)}
-                  />
-                ) : element && element?.categoryId === 1003 ? (
-                  <img
-                    src={require(`../../assets/images/kids/${element?.img}`)}
-                  />
-                ) : element && element?.categoryId === 1004 ? (
-                  <img
-                    src={require(`../../assets/images/beauty/${element?.img}`)}
-                  />
-                ) : (
-                  <img
-                    src={require(`../../assets/images/home&living/${element?.img}`)}
-                  />
-                )}
-              </div>
-              <div className="itemContent">
-                <p>{element?.brand}</p>
+    <div className="CartBody">
+      <div className="CartBodyContainer">
+        {temp &&
+          temp.map((element) => {
+            return (
+              <div className="itemContainer">
+                <div className="itemImg">
+                  {element && element?.categoryId === 1001 ? (
+                    <img
+                      src={require(`../../assets/images/men/${element?.img}`)}
+                    />
+                  ) : element && element?.categoryId === 1002 ? (
+                    <img
+                      src={require(`../../assets/images/women/${element?.img}`)}
+                    />
+                  ) : element && element?.categoryId === 1003 ? (
+                    <img
+                      src={require(`../../assets/images/kids/${element?.img}`)}
+                    />
+                  ) : element && element?.categoryId === 1004 ? (
+                    <img
+                      src={require(`../../assets/images/beauty/${element?.img}`)}
+                    />
+                  ) : (
+                    <img
+                      src={require(`../../assets/images/home&living/${element?.img}`)}
+                    />
+                  )}
+                </div>
+                <div className="itemContent">
+                  <p>{element?.brand}</p>
 
-                <p>Rs. {element?.price}</p>
+                  <p>Rs. {element?.price}</p>
 
-                {element?.stock === true ? (
-                  <p className="InStock">In Stock</p>
-                ) : (
-                  <p className="outOfStock">Out of Stock</p>
-                )}
+                  {element?.stock === true ? (
+                    <p className="InStock">In Stock</p>
+                  ) : (
+                    <p className="outOfStock">Out of Stock</p>
+                  )}
 
-                <div>
-                  <button
-                    onClick={() => removeItem(element?.itemID)}
-                    className="wishlistPageRemoveBtn"
-                  >
-                    Remove
-                  </button>
-                  <button
-                    onClick={() => addToCart(element?.itemID)}
-                    className="wishlistPageCartBtn"
-                  >
-                    Wishlist
-                  </button>
-
-                  <NavLink to="/checkout" state={{ id: element?.itemID }}>
+                  <div>
                     <button
-                      onClick={() => alert(element?.itemID)}
-                      className="wishlistPageBuyBtn"
+                      onClick={() => removeItem(element?.itemID)}
+                      className="wishlistPageRemoveBtn"
                     >
-                      Buy Now
+                      Remove
                     </button>
-                  </NavLink>
+                    <button
+                      onClick={() => addToCart(element?.itemID)}
+                      className="wishlistPageCartBtn"
+                    >
+                      Wishlist
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+      </div>
+      <div>
+        <h1>Total Amount : $ {totalPrice}</h1>
+        <button>Checkout</button>
+      </div>
     </div>
   );
 }
