@@ -39,8 +39,8 @@ function Card(props) {
 
   return (
     <div>
-        <div className="card">
-      <div className="cardImg"
+      <div className="card">
+        <div className="cardImg"
           onClick={() => 
             Navigate("/description", {state: { id: props?.data?.itemID }})
           }
@@ -95,7 +95,7 @@ function Card(props) {
         </button>
       </div>
     </div>
-    </div>
+  </div>
   )
 }
 

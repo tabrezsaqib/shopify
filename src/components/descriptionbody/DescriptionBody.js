@@ -92,8 +92,11 @@ function DescriptionBody(props) {
                   </summary>
                   <p className="DescriptionContentSeller">{element?.seller}</p>
                 </details>
+                {element?.stock || <p className="itemStock">Out of Stock</p>}
                 <div className="DescriptionBtn">
-                  <button onClick={() => handleCart(element?.itemID)}>
+                  <button onClick={() => handleCart(element?.itemID)}
+                  disabled={element?.stock ? false : true}
+                  >
                     Buy Now
                   </button>
                 </div>

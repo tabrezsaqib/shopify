@@ -16,6 +16,9 @@
     font-weight: 800;
     letter-spacing: 1.5px;
   }
+  .Shopify {
+    text-decoration: none;
+  }
   .header .menu ul {
     list-style-type: none;
   }

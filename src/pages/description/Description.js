@@ -21,7 +21,7 @@ function Description() {
         <DescriptionBody data={result} />
         <Footer />
     </div>
-  )
+  );
 }
 
 export default Description

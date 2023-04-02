@@ -63,3 +63,7 @@
   .DescriptionContent .DescriptionBtn button {
     width: 10vw;
   }
+  .itemStock {
+    color: red;
+    font-style: italic;
+  }

@@ -3,7 +3,7 @@ import Cart from "./pages/cart/Cart";
 import Home from "./pages/home/Home";
 import Wishlist from "./pages/wishlist/Wishlist";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useReducer } from "react";
 import { useStateValue } from "./redux/StateProvider";
 
 import Men from "./pages/men/Men";
@@ -34,7 +34,7 @@ function App() {
     dispatch({ type: "APIDATA", value: apiResp });
   }, [apiResp]);
 
-  console.log("apiiiiiii", apiResp);
+  // console.log("apiiiiiii", apiResp);
   
   return (
     <div className="App">
