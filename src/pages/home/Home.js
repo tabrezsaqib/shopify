@@ -3,6 +3,7 @@ import Body from "../../components/body/Body";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
 import { useStateValue } from "../../redux/StateProvider";
+import "./Home.css";
 
 function Home() {
   const [{ apiData, searchContext }, dispatch] = useStateValue();
@@ -35,7 +36,7 @@ function Home() {
   }, [searchContext]);
 
   return (
-    <div>
+    <div className="homePage">
       <Header />
       <Body data={apiData} />
       <Footer />

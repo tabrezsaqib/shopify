@@ -7,7 +7,7 @@
   .card .cardImg {
     width: 100%;
     height: 200px;
-    background-color: white;
+    background-color: rgb(225, 215, 215);
   }
   .card .cardImg img {
     width: 100%;

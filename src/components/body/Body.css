@@ -1,9 +1,20 @@
 .body {
     width: 100vw;
     height: 80vh;
-    background-color: aqua;
+    /* background: url(../../assets/images/background/shopify-bg.jpg)  no-repeat center fixed;
+    background-size: cover; */
+    background-color: beige;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     overflow: auto;
+    justify-self: center;
+    align-items: center;
+  }
+  .cardData{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
   }

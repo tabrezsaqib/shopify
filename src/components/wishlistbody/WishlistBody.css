@@ -1,7 +1,9 @@
 .WishListBodyParent {
   width: 100vw;
   height: 80vh;
-  background-color: aqua;
+  /* background: url(../../assets/images/background/wishlist-bg.jpg)  no-repeat center fixed transparent;
+  background-size: cover; */
+  background: beige;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -10,28 +12,39 @@
 .WishlistCart {
   width: 100vw;
   height: 80vh;
-  background-color: aqua;
+  /* background: url(../../assets/images/background/wishlist-bg.jpg)  no-repeat center fixed transparent;
+  background-size: cover; */
+  background: beige;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   overflow: auto;
+  justify-content: center;
+  align-items: center;
 }
 .itemContainer {
   margin: 20px;
   width: 500px;
   height: 200px;
-  border: 5px solid blue;
+  /* border: 5px solid blue; */
+  border: none;
   display: flex;
 }
 .itemImg {
   width: 200px;
   height: 100%;
-  /* border: 1px solid black; */
+}
+.itemImg img{
+  height: 100%;
+  transition: all 0.2s ease-in-out;
+}
+.itemImg img:hover{
+  transform: scale(1.02);
 }
 .itemContent {
   width: 300px;
   height: 100%;
-  background-color: wheat;
+  background-color: whitesmoke;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -46,6 +59,10 @@
 .wishlistPageBuyBtn {
   width: 5rem;
   margin: 0 5px;
+  background-color: rgb(226, 222, 222);
+  border: none;
+  margin: none;
+  border-radius: 10%;
 }
 .itemImg img {
   width: 100%;
@@ -62,4 +79,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color: black;
+}
+.wishlistPageRemoveBtn:hover,
+.wishlistPageCartBtn:hover,
+.wishlistPageBuyBtn:hover{
+  background-color: gray;
 }

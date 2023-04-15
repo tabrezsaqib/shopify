@@ -102,7 +102,7 @@ function CartBody() {
                     <div className="itemContent">
                       <p>{element?.brand}</p>
 
-                      <p>Rs. {element?.price}</p>
+                      <p>$ {element?.price}</p>
 
                       {element?.stock === true ? (
                         <p className="InStock">In Stock</p>
@@ -129,7 +129,7 @@ function CartBody() {
                 );
               })}
           </div>
-          <div>
+          <div className="cartTotal">
             <h1>Total Amount : $ {totalPrice}</h1>
             <NavLink to="/checkout">
               <button>Checkout</button>

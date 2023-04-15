@@ -7,8 +7,8 @@ function Footer() {
     <div className="footer">
       <div className="copyright">
         <img src={location} />
-        <p>India</p>
-        <p>© 2023 Nike, Inc. All Rights Reserved</p>
+        <p>Canada</p>
+        <p>© 2023 Shopify, Inc. All Rights Reserved</p>
       </div>
       <div className="termsAndCond">
         <ul>
@@ -16,13 +16,13 @@ function Footer() {
             <a href="#"> Guides </a>
           </li>
           <li>
-            <a href="#"> Terms of sale</a>
+            <a href="#"> Terms of Sale</a>
           </li>
           <li>
-            <a href="#"> Terms of use</a>
+            <a href="#"> Terms of Use</a>
           </li>
           <li>
-            <a href=""> Privacy policy </a>
+            <a href="#"> Privacy Policy </a>
           </li>
         </ul>
       </div>

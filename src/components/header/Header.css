@@ -1,7 +1,7 @@
 .header {
     width: 100vw;
     height: 10vh;
-    background-color: aquamarine;
+    background-color: rgb(244, 244, 199);
   
     display: flex;
     flex-direction: row;
@@ -32,7 +32,7 @@
     padding: 0 0.6rem;
   }
   .header ul li a:hover {
-    color: whitesmoke;
+    color: grey;
   }
   .header .headerIcons {
     display: flex;
