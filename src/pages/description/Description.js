@@ -16,7 +16,7 @@ function Description() {
     return element?.itemID === state.id;
   });
   return (
-    <div>
+    <div className='descriptionPage'>
         <Header />
         <DescriptionBody data={result} />
         <Footer />

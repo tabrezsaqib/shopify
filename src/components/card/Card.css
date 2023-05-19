@@ -39,6 +39,11 @@
     justify-content: space-evenly;
     align-items: center;
   }
+  .cardBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .cardBtnDiv .cardBtn {
     border: none;
     outline: none;

@@ -1,0 +1,43 @@
+.socials-container {
+    display: flex;
+    padding-inline: 2.5rem;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .link-container {
+    display: grid;
+    padding-inline: 2rem;
+    padding-block: 2rem;
+    gap: 1rem;
+  }
+  
+  ul .linkBtn {
+    background-color: transparent;
+    text-align: start;
+    width: 100%;
+  }
+  
+  .linkBtn a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  .linkBtn a:hover {
+    background-color: #29d882;
+  }
+  
+  .closeBtn {
+    position: absolute;
+    right: 10px;
+    font-size: x-large;
+    padding: 0.2rem 1rem;
+  }
+  
+  .closeBtn:hover {
+    color: red;
+    cursor: pointer;
+  }
+  

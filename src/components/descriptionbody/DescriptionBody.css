@@ -82,3 +82,27 @@
     color: red;
     font-style: italic;
   }
+  @media only screen and (max-width: 500px) and (min-width: 300px) {
+    .DescriptionBody {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      overflow: auto;
+    }
+  }
+  @media only screen and (max-width: 750px) and (min-width: 501px) {
+    .DescriptionBody {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      overflow: auto;
+    }
+    .DescriptionImg{
+      width: 100%;
+      height:50%;
+    }
+    .DescriptionContent{
+      width: 100%;
+      height:50%;
+    }
+  }

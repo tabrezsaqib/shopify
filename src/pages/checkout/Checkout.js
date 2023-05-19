@@ -17,7 +17,7 @@ function Checkout() {
         <ul className="formContainer">
           <li>
             <label>First Name</label>
-            <input type="text" />
+            <input type="text" required />
           </li>
           <li>
             <label>Last Name</label>
@@ -25,19 +25,19 @@ function Checkout() {
           </li>
           <li>
             <label>Email</label>
-            <input type="email" />
+            <input type="email" required />
           </li>
           <li>
             <label>Phone Number</label>
-            <input type="number" />
+            <input type="number" required />
           </li>
           <li>
             <label>Address</label>
-            <input type="text" />
+            <input type="text" required  />
           </li>
           <li>
             <label>Mode Of Payment</label>
-            <select>
+            <select required >
               <option disabled selected>
                 Payment
               </option>

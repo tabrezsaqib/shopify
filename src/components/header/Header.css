@@ -1,52 +1,93 @@
-.header {
-    width: 100vw;
-    height: 10vh;
-    background-color: rgb(244, 244, 199);
-  
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    box-sizing: border-box;
-    padding: 0 10px;
-    position: sticky;
+.header-container {
+  position: sticky;
+  top: 0;
+  padding-block: 0.5rem;
+  box-shadow: 0px 2em 60px -25px rgba(0, 0, 0, 0.9);
+  z-index: 10;
+}
+
+.header-container.light {
+  box-shadow: 0px 2em 50px -20px #88949b;
+}
+
+.header-padding-top {
+  padding-top: 0.75rem;
+}
+
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+.header-wrapper > * {
+  flex: 1;
+}
+
+.logo-container a {
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.mobile-menu,
+.theme-switch {
+  cursor: pointer;
+}
+
+.nav-container {
+  flex: 2;
+}
+
+.nav-container ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.nav-container a {
+  color: var(--clr-tertiary);
+  padding-bottom: 0.5rem;
+}
+
+.nav-container a:hover {
+  color: var(--clr-primary-800);
+  border-bottom: var(--clr-primary-800) 3px solid;
+}
+
+.social-container {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 1rem;
+}
+
+.social-container ul {
+  display: flex;
+  gap: 1rem;
+}
+
+.theme {
+  cursor: pointer;
+}
+
+@media (min-width: 40em) and (max-width: 70em) {
+  .header-container {
+    padding-block: 0.5rem;
   }
-  .header .logo {
-    font-size: 25px;
-    font-weight: 800;
-    letter-spacing: 1.5px;
+
+  .header-padding-top {
+    padding-top: 1.25rem;
   }
-  .Shopify {
-    text-decoration: none;
+}
+
+@media (min-width: 70em) {
+  .header-container {
+    padding-block: 0.75rem;
   }
-  .header .menu ul {
-    list-style-type: none;
+
+  .header-padding-top {
+    padding-top: 1.25rem;
   }
-  .header ul li a {
-    text-decoration: none;
-    color: black;
-    font-weight: 500;
-  }
-  .header ul li {
-    display: inline-block;
-    padding: 0 0.6rem;
-  }
-  .header ul li a:hover {
-    color: grey;
-  }
-  .header .headerIcons {
-    display: flex;
-  }
-  .header .headerIcons input {
-    border: none;
-    outline: none;
-    border-radius: 10px;
-    height: 1.6rem;
-    width: 10rem;
-    padding: 0 5px;
-  }
-  .header .headerIcons img {
-    padding: 0 0.6rem;
-    width: 1.3rem;
-  }
-  
+}

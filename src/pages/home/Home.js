@@ -38,7 +38,9 @@ function Home() {
   return (
     <div className="homePage">
       <Header />
+      <main>
       <Body data={apiData} />
+      </main>
       <Footer />
     </div>
   );

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Card.css';
 import cart from "../../assets/icons/cart.svg";
 import wishlist from "../../assets/icons/wishlist.svg";
@@ -9,10 +9,14 @@ function Card(props) {
 
   const Navigate = useNavigate();
   const [{ WishlistArray, cartArray }, dispatch] = useStateValue();
+  const [isWishlisted, setIsWishlisted] = useState(false);
+  const [isAddedToCart, setIsAddedToCart] = useState(false);
 
   function checkWishList(id) {
     if (WishlistArray.includes(id)) {
       // if the id is already present in the array, then dont push the same id again
+      setIsWishlisted(!isWishlisted);
+
     } else {
       let temp = WishlistArray;
       temp.push(id);
@@ -21,12 +25,14 @@ function Card(props) {
         type: "WISHLIST",
         value: temp,
       });
+      setIsWishlisted(!isWishlisted);
     }
   }
 
   function checkCartList(id) {
     if (cartArray.includes(id)) {
       // if the id is already present in the array, then dont push the same id again
+      setIsAddedToCart(!isAddedToCart);
     } else {
       let temp = cartArray;
       temp.push(id);
@@ -34,6 +40,7 @@ function Card(props) {
         type: "CARTLIST",
         value: temp,
       });
+      setIsAddedToCart(!isAddedToCart);
     }
   }
 
@@ -84,11 +91,13 @@ function Card(props) {
       </div>
       <div className="cardBtnDiv">
         <button className="cardBtn"
+        style={{ backgroundColor: isWishlisted === false ? "#DCDCDC" : "#FF6666" }}
         onClick={() => checkWishList(props.data && props?.data?.itemID)}
         >
           <img src={wishlist} />
         </button>
         <button className="cardBtn"
+         style={{ backgroundColor: isAddedToCart === false ? "#DCDCDC" : "#778899" }}
         onClick={() => checkCartList(props.data && props?.data?.itemID)}
         >
           <img src={cart} />

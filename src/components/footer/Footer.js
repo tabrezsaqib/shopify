@@ -4,29 +4,22 @@ import location from "../../assets/icons/location.svg";
 
 function Footer() {
   return (
-    <div className="footer">
-      <div className="copyright">
-        <img src={location} />
-        <p>Canada</p>
-        <p>© 2023 Shopify, Inc. All Rights Reserved</p>
+    <footer className="footer-container | bg-secondary padding-inline padding-block padding-container-bottom">
+      <div className="footer-wrapper">
+        <div className="footer-logo footer-light">
+          <img src={location} />
+          <p>Canada</p>
+          <p>© 2023 Shopify, Inc.</p>
+        </div>
+        <div className="socials footer-logo">
+          <ul>
+            <li>
+              <a href="#"> Privacy Policy </a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div className="termsAndCond">
-        <ul>
-          <li>
-            <a href="#"> Guides </a>
-          </li>
-          <li>
-            <a href="#"> Terms of Sale</a>
-          </li>
-          <li>
-            <a href="#"> Terms of Use</a>
-          </li>
-          <li>
-            <a href="#"> Privacy Policy </a>
-          </li>
-        </ul>
-      </div>
-    </div>
+    </footer>
   );
 }
 
